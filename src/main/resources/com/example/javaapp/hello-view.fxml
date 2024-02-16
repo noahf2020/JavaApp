@@ -1,16 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.javaapp.HelloController">
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.javaapp.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Label fx:id="welcomeText" />
+   <Pane prefHeight="295.0" prefWidth="754.0">
+      <children>
+         <TabPane layoutX="-5.0" layoutY="-44.0" prefHeight="335.0" prefWidth="775.0" tabClosingPolicy="UNAVAILABLE">
+           <tabs>
+             <Tab text="Customer">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="665.0">
+                        <children>
+                           <TextField layoutX="160.0" layoutY="189.0" prefHeight="56.0" prefWidth="189.0" text="ENTER GYM ID">
+                              <font>
+                                 <Font size="19.0" />
+                              </font>
+                           </TextField>
+                           <Button layoutX="428.0" layoutY="189.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="196.0" text="Enter">
+                              <font>
+                                 <Font size="24.0" />
+                              </font>
+                           </Button>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+             <Tab text="Manager">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <TableView layoutX="24.0" layoutY="25.0" prefHeight="280.0" prefWidth="476.0">
+                             <columns>
+                               <TableColumn prefWidth="75.0" text="Gym ID" />
+                               <TableColumn prefWidth="94.49072265625" text="Name" />
+                                 <TableColumn prefWidth="76.50932312011719" text="Picture" />
+                                 <TableColumn prefWidth="75.5035400390625" text="#ofVisits" />
+                                 <TableColumn prefWidth="69.00994873046875" text="Standing" />
+                                 <TableColumn prefWidth="84.50714111328125" text="IsSignedIn" />
+                             </columns>
+                           </TableView>
+                           <Text layoutX="188.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers" textAlignment="CENTER" wrappingWidth="130.22044372558594">
+                              <font>
+                                 <Font name="System Bold" size="17.0" />
+                              </font>
+                           </Text>
+                           <TableView layoutX="544.0" layoutY="41.0" prefHeight="248.0" prefWidth="200.0">
+                             <columns>
+                               <TableColumn prefWidth="80.9971923828125" text="Gym Id" />
+                               <TableColumn prefWidth="114.0028076171875" text="Standing" />
+                             </columns>
+                           </TableView>
+                           <Text layoutX="573.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Poor Standing" textAlignment="CENTER" wrappingWidth="130.22044372558594">
+                              <font>
+                                 <Font name="System Bold" size="17.0" />
+                              </font>
+                           </Text>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+           </tabs>
+         </TabPane>
+      </children>
+   </Pane>
 </VBox>
