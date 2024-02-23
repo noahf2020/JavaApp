@@ -11,4 +11,9 @@ public class CustomController {
     public Label Welcomeback;
     public Button Uploadpicture;
     public Button LOGOUT;
+
+    public void logout(){
+    }
+    public void uploadPic(){
+    }
 }

@@ -18,8 +18,11 @@ public class LoginController {
 
 
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+
+    public void login() {
+    }
+    public void restore() {
+    }
+    public void save() {
     }
 }
