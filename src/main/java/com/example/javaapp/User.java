@@ -105,11 +105,9 @@ public class User {
         Scanner dataScanner = new Scanner(dataFile);
         dataScanner.useDelimiter("\t|\n");
         while (dataScanner.hasNext()) {
-            int Gender = dataScanner.nextInt();
             String Name = dataScanner.next();
-            String Gender = dataScanner.next();
             String gymID = dataScanner.next();
-            User teamData = new User(Name, Gender, preferdname, gymID);
+            User teamData = new User(Name, gymID);
             System.out.println(teamData);
         }
     }
