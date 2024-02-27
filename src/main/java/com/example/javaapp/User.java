@@ -1,15 +1,18 @@
 package com.example.javaapp;
 
+import java.io.File;
+import java.util.Scanner;
+
 public class User {
-   private String GymID;
+    private String GymID;
     private String Visitorname;
     private Boolean IsManager;
-    private  String VisitorPicture;
+    private String VisitorPicture;
     private int amountofVisits;
     private Boolean Standing;
     private int RealStanding;
-    private  Boolean SignedIn;
-    private  int LastSignin;
+    private Boolean SignedIn;
+    private int LastSignin;
 
     public User(String GymID, String Visitorname, Boolean IsManager, String VisitorPicture, int amountofVisits, Boolean Standing, int RealStanding, Boolean SignedIn, int LastSignin) {
         this.GymID = GymID;
@@ -95,5 +98,19 @@ public class User {
 
     public void setLastSignin(int lastSignin) {
         LastSignin = lastSignin;
+    }
+
+    public static void readData() throws Exception {
+        File dataFile = new File("SLA Students");
+        Scanner dataScanner = new Scanner(dataFile);
+        dataScanner.useDelimiter("\t|\n");
+        while (dataScanner.hasNext()) {
+            int Gender = dataScanner.nextInt();
+            String Name = dataScanner.next();
+            String Gender = dataScanner.next();
+            String gymID = dataScanner.next();
+            User teamData = new User(Name, Gender, preferdname, gymID);
+            System.out.println(teamData);
+        }
     }
 }

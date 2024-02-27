@@ -14,15 +14,20 @@ public class LoginController {
     public Button Enter;
 
 
-
+    public void initialize() throws Exception {
+        NBA.readData(NBATV);
+    }
 
 
 
 
     public void login() {
+
     }
     public void restore() {
+
     }
     public void save() {
+
     }
 }
