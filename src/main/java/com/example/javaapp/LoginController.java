@@ -14,6 +14,7 @@ public class LoginController {
     public Button Enter;
 
 
+
     public void initialize() throws Exception {
         User.readData();
     }

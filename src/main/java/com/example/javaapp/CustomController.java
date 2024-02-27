@@ -16,4 +16,9 @@ public class CustomController {
     }
     public void uploadPic(){
     }
+    public void initialize(){
+        for (User singleUser: User.allUsers) {
+
+        }
+    }
 }

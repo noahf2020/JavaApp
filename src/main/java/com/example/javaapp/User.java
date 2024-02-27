@@ -2,8 +2,13 @@ package com.example.javaapp;
 
 import java.io.File;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class User {
+    // Class fields
+    static ArrayList<User> allUsers;
+
+    // Object fields
     private String GymID;
     private String Visitorname;
     private Boolean IsManager;
@@ -25,7 +30,7 @@ public class User {
         this.SignedIn = SignedIn;
         this.LastSignin = LastSignin;
 
-
+        allUsers.add(this);
     }
 
     public String getGymID() {
