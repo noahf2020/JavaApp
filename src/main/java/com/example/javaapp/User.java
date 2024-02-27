@@ -112,7 +112,9 @@ public class User {
         while (dataScanner.hasNext()) {
             String Name = dataScanner.next();
             String gymID = dataScanner.next();
-            User teamData = new User(Name, gymID);
+            Boolean isMan = dataScanner.nextBoolean();
+
+            User teamData = new User(gymID,Name,isMan, null,0,null,0,null,0);
             System.out.println(teamData);
         }
     }
