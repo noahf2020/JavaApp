@@ -30,7 +30,7 @@ public class User {
         this.SignedIn = SignedIn;
         this.LastSignin = LastSignin;
 
-        allUsers.add(this);
+
     }
 
     public String getGymID() {
@@ -106,16 +106,21 @@ public class User {
     }
 
     public static void readData() throws Exception {
-        File dataFile = new File("SLA Students");
+        File dataFile = new File("src/main/java/com/example/javaapp/Students.txt");
         Scanner dataScanner = new Scanner(dataFile);
         dataScanner.useDelimiter("\t|\n");
         while (dataScanner.hasNext()) {
             String Name = dataScanner.next();
             String gymID = dataScanner.next();
-            Boolean isMan = dataScanner.nextBoolean();
+            System.out.println(Name);
+            System.out.println(gymID);
 
-            User teamData = new User(gymID,Name,isMan, null,0,null,0,null,0);
-            System.out.println(teamData);
+            String isMan = dataScanner.next();
+            Boolean ismanBool = Boolean.parseBoolean(isMan);
+            System.out.println(ismanBool);
+
+           User teamData = new User(gymID,Name,ismanBool, null,0,null,0,null,0);
+            allUsers.add(teamData);
         }
     }
 }
