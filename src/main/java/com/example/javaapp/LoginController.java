@@ -15,7 +15,7 @@ public class LoginController {
 
 
     public void initialize() throws Exception {
-        NBA.readData(NBATV);
+        User.readData();
     }
 
 
