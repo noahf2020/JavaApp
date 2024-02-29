@@ -106,6 +106,10 @@ public class User {
     }
 
     public static void readData() throws Exception {
+        if (User.allUsers == null) {
+            User.allUsers = new ArrayList<>();
+        }
+
         File dataFile = new File("src/main/java/com/example/javaapp/Students.txt");
         Scanner dataScanner = new Scanner(dataFile);
         dataScanner.useDelimiter("\t|\n");
@@ -120,7 +124,7 @@ public class User {
             System.out.println(ismanBool);
 
            User teamData = new User(gymID,Name,ismanBool, null,0,null,0,null,0);
-            allUsers.add(teamData);
+           allUsers.add(teamData);
         }
     }
 }
