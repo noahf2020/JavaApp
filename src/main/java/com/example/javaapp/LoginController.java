@@ -50,7 +50,25 @@ public class LoginController {
 
 
     }
+  public void Manlogin(ActionEvent event) throws Exception {
+        String Code = EnterGym.getText();
+        for (User singleUser: User.allUsers) {
+            Boolean IsManager = singleUser.getManager();
+            if(IsManager.equals(Code)){
+                save(Code);
+                root = FXMLLoader.load(getClass().getResource("manager.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }else{
+                System.out.println("Invalid Login");
+            }
+        }
+  }
     public void restore() {
+
+
 
     }
     public void save(String LoginCode) throws IOException {

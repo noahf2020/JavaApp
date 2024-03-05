@@ -1,5 +1,5 @@
 Alexander, M'Kiri	9193860	false
-Awodesu, Ayomide (Ayo)	9097634	false
+Awodesu, Ayomide (Ayo)	9097634	true
 Connelly, Ella	8895255	false
 Czapka, Matthew	8942351	false
 Derrickson, Caleb	9000805	false
