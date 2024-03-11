@@ -29,8 +29,10 @@ public class User {
         this.RealStanding = RealStanding;
         this.SignedIn = SignedIn;
         this.LastSignin = LastSignin;
-
-
+        if (allUsers == null) {
+            allUsers = new ArrayList<User>();
+        }
+        allUsers.add(this);
     }
 
     public String getGymID() {
@@ -119,12 +121,17 @@ public class User {
             System.out.println(Name);
             System.out.println(gymID);
 
-            String isMan = dataScanner.next();
-            Boolean ismanBool = Boolean.parseBoolean(isMan);
-            System.out.println(ismanBool);
+            String managerBool = dataScanner.next();
+            System.out.println("managerBool" +  managerBool);
 
-           User teamData = new User(gymID,Name,ismanBool, null,0,null,0,null,0);
-           allUsers.add(teamData);
+            Boolean isMan = false;
+            if (managerBool.equals("true")) {
+                System.out.println("Jawn");
+                isMan = true;
+            }
+            System.out.println("isMan " +  isMan);
+
+           new User(gymID,Name,true, null,0,null,0,null,0);
         }
     }
 }

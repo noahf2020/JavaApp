@@ -38,11 +38,21 @@ public class LoginController {
                String ID =  singleUser.getGymID();
                if(ID.equals(Code)){
                    save(Code);
-                   root = FXMLLoader.load(getClass().getResource("customer.fxml"));
-                   stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                   scene = new Scene(root);
-                   stage.setScene(scene);
-                   stage.show();
+                   System.out.println(singleUser.getManager());
+                   if(singleUser.getManager()){
+                       root = FXMLLoader.load(getClass().getResource("manager.fxml"));
+                       stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                       scene = new Scene(root);
+                       stage.setScene(scene);
+                       stage.show();
+                   }else{
+                       root = FXMLLoader.load(getClass().getResource("customer.fxml"));
+                       stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                       scene = new Scene(root);
+                       stage.setScene(scene);
+                       stage.show();
+                   }
+
                }else{
                    System.out.println("Invalid Login");
                }
@@ -50,22 +60,7 @@ public class LoginController {
 
 
     }
-  public void Manlogin(ActionEvent event) throws Exception {
-        String Code = EnterGym.getText();
-        for (User singleUser: User.allUsers) {
-            Boolean IsManager = singleUser.getManager();
-            if(IsManager.equals(Code)){
-                save(Code);
-                root = FXMLLoader.load(getClass().getResource("manager.fxml"));
-                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            }else{
-                System.out.println("Invalid Login");
-            }
-        }
-  }
+
     public void restore() {
 
 
