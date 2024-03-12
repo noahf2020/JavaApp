@@ -20,16 +20,7 @@
       <children>
          <AnchorPane layoutX="3.0" layoutY="37.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
-               <TableView fx:id="Chart" layoutX="15.0" layoutY="-12.0" prefHeight="280.0" prefWidth="476.0">
-                  <columns>
-                     <TableColumn fx:id="GID" prefWidth="75.0" text="Gym ID" />
-                     <TableColumn fx:id="Name" prefWidth="94.49072265625" text="Name" />
-                     <TableColumn fx:id="Picture" prefWidth="76.50932312011719" text="Picture" />
-                     <TableColumn fx:id="NumofVis" prefWidth="75.5035400390625" text="#ofVisits" />
-                     <TableColumn fx:id="Standing" prefWidth="69.00994873046875" text="Standing" />
-                     <TableColumn fx:id="IsSignedIn" prefWidth="84.50714111328125" text="IsSignedIn" />
-                  </columns>
-               </TableView>
+               <TableView fx:id="Chart" layoutX="15.0" layoutY="-12.0" prefHeight="280.0" prefWidth="476.0" />
             </children>
          </AnchorPane>
          <Text fx:id="Customers" layoutX="177.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers" textAlignment="CENTER" wrappingWidth="130.22044372558594">
