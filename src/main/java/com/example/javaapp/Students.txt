@@ -1,6 +1,6 @@
-Alexander, M'Kiri	9193860	true
+Alexander, M'Kiri	9193860	false
 Awodesu, Ayomide (Ayo)	9097634	true
-Connelly, Ella	8895255	true
-Czapka, Matthew	8942351	true
-Derrickson, Caleb	9000805	true
-Grannum Jr., Andrew	10059980	true
+Connelly, Ella	8895255	false
+Czapka, Matthew	8942351	false
+Derrickson, Caleb	9000805	false
+Grannum Jr., Andrew	10059980	false
