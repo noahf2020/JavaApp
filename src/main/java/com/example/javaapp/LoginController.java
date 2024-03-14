@@ -66,6 +66,8 @@ public class LoginController {
 
 
     }
+
+
     public void save(String LoginCode) throws IOException {
         String filePath = "currentUser.txt";
         try (FileWriter fileWriter = new FileWriter(filePath);

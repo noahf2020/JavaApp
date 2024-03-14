@@ -1,4 +1,5 @@
 package com.example.javaapp;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,9 +14,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ManagerController {
@@ -33,12 +34,9 @@ public class ManagerController {
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
             bufferedWriter.write("");
             System.out.println("String has been written to the file.");
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
         root = FXMLLoader.load(getClass().getResource("login.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -47,7 +45,7 @@ public class ManagerController {
     }
 
 public void initialize() throws Exception {
-System.out.println("Ddd");
+
     TableColumn<User, String> gymid = new TableColumn<>("GymID");
     gymid.setCellValueFactory(new PropertyValueFactory<User, String>("GymID"));
 
@@ -73,10 +71,39 @@ System.out.println("Ddd");
     Chart.getColumns().add(RealStand);
     Chart.getColumns().add(Signed);
     Chart.getColumns().add(LastSigned);
+    try {
+        restore();
+    } catch (Exception ex) {
+        System.out.println(ex);
+    }
+}
 
+    public void saveObject() throws Exception {
+        FileOutputStream outputStream = new FileOutputStream("data");
+        ObjectOutputStream objOutputStream = new ObjectOutputStream(outputStream);
+        ObservableList<User> users = Chart.getItems();
+        objOutputStream.writeInt(users.size());
+        for (User user : users) {
+            objOutputStream.writeObject(user);
+        }
+        objOutputStream.flush();
+        objOutputStream.close();
+        outputStream.close();
+    }
 
-    Chart.getItems().addAll(User.allUsers);
+    void restore() throws Exception {
+        FileInputStream inputStream = new FileInputStream("data");
+        ObjectInputStream objInputStream = new ObjectInputStream(inputStream);
+        int numOfSavedObjects = objInputStream.readInt();
+        List<User> Users = new ArrayList<>();
+        for (int i = 0; i < numOfSavedObjects; i++) {
+            User user = (User) objInputStream.readObject();
+            Users.add(user);
+        }
+        objInputStream.close();
+        inputStream.close();
+        Chart.getItems().addAll(Users);
+    }
 
-
-}}
+}
 

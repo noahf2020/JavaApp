@@ -1,10 +1,11 @@
 package com.example.javaapp;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class User {
+public class User implements Serializable {
     // Class fields
     static ArrayList<User> allUsers;
 
@@ -131,7 +132,7 @@ public class User {
             }
             System.out.println("isMan " +  isMan);
 
-           new User(gymID,Name,false, null,0,null,0,null,0);
+           new User(gymID,Name,true, null,0,null,0,null,0);
         }
     }
 }
