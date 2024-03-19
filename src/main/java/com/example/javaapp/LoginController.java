@@ -33,6 +33,7 @@ public class LoginController {
 
 
     public void login(ActionEvent event) throws Exception {
+        CustomController.currentUser = User.allUsers.get(0);
         String Code = EnterGym.getText();
         for (User singleUser: User.allUsers) {
                String ID =  singleUser.getGymID();

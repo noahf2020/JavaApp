@@ -23,6 +23,9 @@ public class CustomController {
     public Stage stage;
     public Scene scene;
     public Parent root;
+
+    static User currentUser;
+
     public void logout(ActionEvent event) throws IOException{
         String filePath = "currentUser.txt";
         try (FileWriter fileWriter = new FileWriter(filePath);
