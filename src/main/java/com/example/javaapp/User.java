@@ -123,13 +123,8 @@ public class User implements Serializable {
             System.out.println(gymID);
 
 
-            boolean isMan = false;
-            if (gymID.equals("8831651")) {
-                isMan = true;
-            }
-            System.out.println("isMan " +  isMan);
 
-           new User(gymID,Name,isMan, null,0,null,0,null,0);
+           new User(gymID,Name,false, null,0,null,0,null,0);
         }
     }
 }

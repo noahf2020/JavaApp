@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 import java.io.*;
 
+import static com.example.javaapp.CustomController.currentUser;
+
 public class LoginController {
     @FXML
     private Label welcomeText;
@@ -33,14 +35,18 @@ public class LoginController {
 
 
     public void login(ActionEvent event) throws Exception {
-        CustomController.currentUser = User.allUsers.get(0);
+        currentUser = User.allUsers.get(0);
         String Code = EnterGym.getText();
-        for (User singleUser: User.allUsers) {
-               String ID =  singleUser.getGymID();
+
+               String ID =  currentUser.getGymID();
+        System.out.println("ID: " + ID + " EnterCode: " + Code);
+
                if(ID.equals(Code)){
+                   System.out.println("HelloWorld");
+
                    save(Code);
-                   System.out.println(singleUser.getManager());
-                   if(singleUser.getManager()){
+                   System.out.println(currentUser.getManager());
+                   if(currentUser.getManager()){
                        root = FXMLLoader.load(getClass().getResource("manager.fxml"));
                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                        scene = new Scene(root);
@@ -57,7 +63,7 @@ public class LoginController {
                }else{
                    System.out.println("Invalid Login");
                }
-        }
+
 
 
     }
