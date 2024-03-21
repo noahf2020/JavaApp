@@ -108,6 +108,22 @@ public class User implements Serializable {
         LastSignin = lastSignin;
     }
 
+    public static int rating(int elapsedTime, int rating){
+
+        int decreaseRate = 1;
+        int adjustedNumber = rating - (elapsedTime / decreaseRate);
+        if (adjustedNumber < 1) {
+            adjustedNumber = 1;
+        } else if (adjustedNumber > 10) {
+            adjustedNumber = 10;
+        }
+
+        return adjustedNumber;
+    }
+
+
+
+
     public static void readData() throws Exception {
         if (User.allUsers == null) {
             User.allUsers = new ArrayList<>();
@@ -121,18 +137,14 @@ public class User implements Serializable {
             String gymID = dataScanner.next();
             System.out.println(Name);
             System.out.println(gymID);
-
-            String managerBool = dataScanner.next();
-            System.out.println("managerBool" +  managerBool);
-
-            Boolean isMan = false;
-            if (managerBool.equals("true")) {
-                System.out.println("Jawn");
-                isMan = true;
+            Boolean isman;
+            if(gymID.equals("9193860")){
+                isman = true;
+            }else{
+                isman = false;
             }
-            System.out.println("isMan " +  isMan);
 
-           new User(gymID,Name,true, null,0,null,0,null,0);
+           new User(gymID,Name,isman, null,0,null,0,null,0);
         }
     }
 }
