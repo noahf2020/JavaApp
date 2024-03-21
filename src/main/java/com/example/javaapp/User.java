@@ -122,17 +122,14 @@ public class User implements Serializable {
             System.out.println(Name);
             System.out.println(gymID);
 
-            String managerBool = dataScanner.next();
-            System.out.println("managerBool" +  managerBool);
 
-            Boolean isMan = false;
-            if (managerBool.equals("true")) {
-                System.out.println("Jawn");
+            boolean isMan = false;
+            if (gymID.equals("8831651")) {
                 isMan = true;
             }
             System.out.println("isMan " +  isMan);
 
-           new User(gymID,Name,true, null,0,null,0,null,0);
+           new User(gymID,Name,isMan, null,0,null,0,null,0);
         }
     }
 }
