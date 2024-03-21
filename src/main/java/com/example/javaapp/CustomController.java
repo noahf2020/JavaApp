@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -44,8 +45,12 @@ public class CustomController {
         stage.setScene(scene);
         stage.show();
     }
-    public void uploadPic(){
-    }
+    public void onActionUpload(){
+        FileChooser fileChooser = new FileChooser();
+
+        File selectedFile = fileChooser.showOpenDialog(stage);
+    };
+
     public void initialize() throws IOException{
         String filePath = "currentUser.txt";
 

@@ -36,7 +36,7 @@
                   </font>
                </Label>
                <ImageView fitHeight="128.0" fitWidth="175.0" layoutX="404.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
-               <Button fx:id="Uploadpicture" layoutX="142.0" layoutY="78.0" mnemonicParsing="false" onAction="#uploadPic" prefHeight="54.0" prefWidth="161.0" text="Upload Picture">
+               <Button fx:id="Uploadpicture" layoutX="142.0" layoutY="78.0" mnemonicParsing="false" onAction="#onActionUpload" prefHeight="54.0" prefWidth="161.0" text="Upload Picture">
                   <font>
                      <Font name="System Bold" size="17.0" />
                   </font>
