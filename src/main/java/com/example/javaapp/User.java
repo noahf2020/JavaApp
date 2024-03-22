@@ -107,7 +107,30 @@ public class User implements Serializable {
     public void setLastSignin(int lastSignin) {
         LastSignin = lastSignin;
     }
+    public static int adjustNumber(int elapsedTime, int realStanding) {
+        if (elapsedTime > 200000) {
+            int decreaseRate = 1;
+            int adjustedNumber = realStanding - (elapsedTime / decreaseRate);
 
+            if (adjustedNumber < 1) {
+                adjustedNumber = 1;
+            } else if (adjustedNumber > 10) {
+                adjustedNumber = 10;
+            }
+            return adjustedNumber;
+        }else{
+            int increaseRate = 1;
+            int adjustedNumber = realStanding + (elapsedTime / increaseRate);
+
+            if (adjustedNumber < 1) {
+                adjustedNumber = 1;
+            } else if (adjustedNumber > 10) {
+                adjustedNumber = 10;
+            }
+            return adjustedNumber;
+        }
+
+    }
     public static void readData() throws Exception {
         if (User.allUsers == null) {
             User.allUsers = new ArrayList<>();
