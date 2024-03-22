@@ -29,14 +29,7 @@ public class ManagerController {
     public Scene scene;
     public Parent root;
     public void logout(ActionEvent event) throws IOException {
-        String filePath = "currentUser.txt";
-        try (FileWriter fileWriter = new FileWriter(filePath);
-             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-            bufferedWriter.write("");
-            System.out.println("String has been written to the file.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         root = FXMLLoader.load(getClass().getResource("login.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

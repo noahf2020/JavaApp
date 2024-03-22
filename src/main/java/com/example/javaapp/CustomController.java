@@ -27,16 +27,7 @@ public class CustomController {
 
     static User currentUser;
 
-    public void logout(ActionEvent event) throws IOException{
-        String filePath = "currentUser.txt";
-        try (FileWriter fileWriter = new FileWriter(filePath);
-             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-            bufferedWriter.write("");
-            System.out.println("String has been written to the file.");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void logout(ActionEvent event) throws IOException {
 
 
         root = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -45,38 +36,24 @@ public class CustomController {
         stage.setScene(scene);
         stage.show();
     }
-    public void onActionUpload(){
+
+    public void onActionUpload() {
         FileChooser fileChooser = new FileChooser();
 
         File selectedFile = fileChooser.showOpenDialog(stage);
-    };
+    }
 
-    public void initialize() throws IOException{
-        String filePath = "currentUser.txt";
+    ;
 
-        // Try-with-resources statement to automatically close the resources
-        try (FileReader fileReader = new FileReader(filePath);
-             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
-                for (User singleUser: User.allUsers) {
-                    String ID =  singleUser.getGymID();
-                    if(ID.equals(line)) {
-                        System.out.println(singleUser);
-                        String Name = singleUser.getVisitorname();
-                        Welcomeback.setText("Welcome Back: " +Name);
+    public void initialize() throws IOException {
+        currentUser = User.allUsers.get(0);
 
 
-                    }
-                }
-
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println(currentUser);
+        String Name = currentUser.getVisitorname();
+        Welcomeback.setText("Welcome Back: " + Name);
 
 
     }
+
 }

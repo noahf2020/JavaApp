@@ -46,7 +46,6 @@ public class LoginController {
                if(ID.contains(Code)){
                    System.out.println("HelloWorld");
 
-                   save(Code);
                    System.out.println(currentUser.getManager());
                    if(currentUser.getManager()){
                        root = FXMLLoader.load(getClass().getResource("manager.fxml"));
@@ -77,15 +76,5 @@ public class LoginController {
     }
 
 
-    public void save(String LoginCode) throws IOException {
-        String filePath = "currentUser.txt";
-        try (FileWriter fileWriter = new FileWriter(filePath);
-             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-             bufferedWriter.write(LoginCode);
-             System.out.println("String has been written to the file.");
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
