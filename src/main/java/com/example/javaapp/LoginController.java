@@ -39,9 +39,11 @@ public class LoginController {
         String Code = EnterGym.getText();
 
                String ID =  currentUser.getGymID();
-        System.out.println("ID: " + ID + " EnterCode: " + Code);
+        System.out.println("ID: " + ID );
 
-               if(ID.equals(Code)){
+        System.out.println("EnterCode: " + Code);
+
+               if(ID.contains(Code)){
                    System.out.println("HelloWorld");
 
                    save(Code);
