@@ -38,7 +38,7 @@ public class CustomController {
         stage.setScene(scene);
         stage.show();
     }
-    ImageView imageView = new ImageView(new Image("your_image_file_path.jpg"));
+    ImageView imageView = new ImageView(new Image("Morton.jpg"));
 
 
     public void onActionUpload() {
